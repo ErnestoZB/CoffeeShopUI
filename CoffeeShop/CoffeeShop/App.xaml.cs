@@ -10,7 +10,7 @@ namespace CoffeeShop
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new AllProductsView();
         }
 
         protected override void OnStart()

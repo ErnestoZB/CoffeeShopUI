@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,6 +16,7 @@ namespace CoffeeShop.ViewModels
         }
 
         public ICommand OnAppearingCommand { get; }
+        public ICommand OnCoffeeSelectedCommand { get; }
 
         public AllProductsViewModel()
         {

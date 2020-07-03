@@ -1,4 +1,6 @@
-﻿using CoffeeShop.ViewModels;
+﻿using CoffeeShop.Models;
+using CoffeeShop.ViewModels;
+using CoffeeShop.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +29,17 @@ namespace CoffeeShop
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
             _viewModel.OnAppearingCommand.Execute(null);
+        }
+
+        private void OnCoffeeSelected(object sender, EventArgs e)
+        {
+            var image = (Image)sender;
+
+            var product = (Product) ((TapGestureRecognizer)image.GestureRecognizers[0]).CommandParameter;
+            
+            var detailView = new ProductDetailView(product);
+
+            Navigation.PushAsync(detailView);
         }
     }
 }

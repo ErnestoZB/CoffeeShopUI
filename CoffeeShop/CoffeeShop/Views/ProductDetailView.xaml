@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CoffeeShop.Views.ProductDetailView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:icons="clr-namespace:CoffeeShop.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="false"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Frame
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                Margin="0,-36,0,0"
+                Padding="0"
+                CornerRadius="36"
+                HasShadow="False">
+                <Image Aspect="AspectFill" Source="{Binding Product.Image}" />
+            </Frame>
+
+            <Button
+                Grid.Row="0"
+                Margin="16,16,0,16"
+                BackgroundColor="White"
+                FontFamily="Icons"
+                FontSize="28"
+                HeightRequest="56"
+                HorizontalOptions="Start"
+                Text="{x:Static icons:Icons.Back}"
+                TextColor="{StaticResource Green}"
+                VerticalOptions="Start"
+                WidthRequest="56" />
+
+            <Label
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                Margin="20,16,20,0"
+                FontAttributes="Bold"
+                FontSize="26"
+                Text="{Binding Product.Name}"
+                TextColor="{StaticResource Green}"
+                VerticalTextAlignment="Center" />
+
+            <Label
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                Margin="20,0"
+                FontSize="Micro"
+                Text="The name of the company is based on the movie"
+                TextColor="{StaticResource DarkYellow}" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="20,16,0,16"
+                FontAttributes="Bold"
+                FontSize="26"
+                HorizontalTextAlignment="Start"
+                Text="{Binding Product.Price, StringFormat='${0:F2}'}"
+                TextColor="{StaticResource Green}"
+                VerticalTextAlignment="Center" />
+
+            <Frame
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,16,20,16"
+                Padding="0"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                WidthRequest="160">
+
+                <Grid ColumnSpacing="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource Skin}"
+                        FontAttributes="Bold"
+                        Text="-"
+                        TextColor="{StaticResource Green}" />
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource Skin}"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        Text="1"
+                        TextColor="{StaticResource Green}"
+                        VerticalTextAlignment="Center" />
+
+                    <Button
+                        Grid.Column="2"
+                        Padding="0"
+                        BackgroundColor="{StaticResource Skin}"
+                        FontAttributes="Bold"
+                        Text="+"
+                        TextColor="{StaticResource Green}" />
+
+                </Grid>
+
+            </Frame>
+
+            <Label
+                Grid.Row="4"
+                Grid.ColumnSpan="3"
+                Margin="20,0,20,28"
+                FontSize="Micro"
+                LineHeight="1.4"
+                MaxLines="4"
+                Text="{Binding Product.Description}"
+                TextColor="Black" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Margin="0,0,0,24"
+                Padding="0"
+                BackgroundColor="{StaticResource Green}"
+                CornerRadius="16"
+                FontFamily="Icons"
+                HeightRequest="32"
+                HorizontalOptions="Center"
+                Text="{x:Static icons:Icons.Beans}"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="32" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="0,0,0,16"
+                BackgroundColor="White"
+                CornerRadius="26"
+                FontFamily="Icons"
+                FontSize="20"
+                HeightRequest="52"
+                HorizontalOptions="Center"
+                Text="{x:Static icons:Icons.Cart}"
+                TextColor="{StaticResource Green}"
+                VerticalOptions="Center"
+                WidthRequest="52" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="2"
+                Margin="0,0,0,24"
+                Padding="0"
+                BackgroundColor="{StaticResource Green}"
+                CornerRadius="16"
+                FontFamily="Icons"
+                HeightRequest="32"
+                HorizontalOptions="Center"
+                Text="{x:Static icons:Icons.Coffee}"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="32" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

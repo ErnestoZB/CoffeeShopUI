@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Appearing="ContentPage_Appearing"
     BackgroundColor="{StaticResource Green}"
+    NavigationPage.HasNavigationBar="false"
     mc:Ignorable="d">
 
     <Grid>
@@ -90,7 +91,15 @@
                                 Grid.ColumnSpan="2"
                                 Margin="0"
                                 Aspect="AspectFill"
-                                Source="{Binding Image}" />
+                                Source="{Binding Image}">
+
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        NumberOfTapsRequired="1"
+                                        Tapped="OnCoffeeSelected" />
+                                </Image.GestureRecognizers>
+                            </Image>
 
                             <Label
                                 Grid.Row="1"

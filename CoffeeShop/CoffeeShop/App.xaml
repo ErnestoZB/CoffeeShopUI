@@ -10,5 +10,6 @@
         <Color x:Key="Green">#258083</Color>
         <Color x:Key="Skin">#eedab8</Color>
         <Color x:Key="Brown">#a0766e</Color>
+        <Color x:Key="DarkYellow">#F6C165</Color>
     </Application.Resources>
 </Application>

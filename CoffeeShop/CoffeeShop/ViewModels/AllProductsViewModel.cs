@@ -1,6 +1,8 @@
 ﻿using CoffeeShop.Models;
-using System;
+using CoffeeShop.Services;
+using CoffeeShop.Views;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -15,12 +17,25 @@ namespace CoffeeShop.ViewModels
             set => SetValue(ref _products, value);
         }
 
-        public ICommand OnAppearingCommand { get; }
-        public ICommand OnCoffeeSelectedCommand { get; }
-
-        public AllProductsViewModel()
+        private Product _currentProduct;
+        public Product CurrentProduct
         {
+            get => _currentProduct;
+            set => SetValue(ref _currentProduct, value);
+        }
+
+        public ICommand OnAppearingCommand { get; }
+
+        public ICommand ProductSelectedCommand { get; }
+
+        private readonly INavigationService _navigationService;
+
+        public AllProductsViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+
             OnAppearingCommand = new Command(LoadItems);
+            ProductSelectedCommand = new Command(async vm => await ShowDetailPage());
         }
 
         private void LoadItems()
@@ -42,7 +57,13 @@ namespace CoffeeShop.ViewModels
                     Description = "Our ride-or-die espresso blend. We use Crossfade as a utility espresso in our cafes. Great with milk, americanos, or neat"
                 }
             };
+        }
 
+        private async Task ShowDetailPage()
+        {
+            var detailPage = new ProductDetailView(CurrentProduct);
+
+            await _navigationService.PushAsync(detailPage);
         }
     }
 }

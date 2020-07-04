@@ -41,6 +41,7 @@
                 Grid.Row="0"
                 Margin="16,16,0,16"
                 BackgroundColor="White"
+                Command="{Binding BackCommand}"
                 FontFamily="Icons"
                 FontSize="28"
                 HeightRequest="56"

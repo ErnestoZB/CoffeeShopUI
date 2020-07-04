@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.Models;
+using CoffeeShop.Services;
 using CoffeeShop.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace CoffeeShop.Views
         {
             InitializeComponent();
 
-            _viewModel = new ProductDetailViewModel(product);
+            _viewModel = new ProductDetailViewModel(new NavigationService(), product);
 
             BindingContext = _viewModel;
         }

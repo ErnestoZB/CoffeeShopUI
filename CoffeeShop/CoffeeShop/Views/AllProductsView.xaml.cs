@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.Models;
+using CoffeeShop.Services;
 using CoffeeShop.ViewModels;
 using CoffeeShop.Views;
 using System;
@@ -21,7 +22,7 @@ namespace CoffeeShop
         {
             InitializeComponent();
 
-            _viewModel = new AllProductsViewModel();
+            _viewModel = new AllProductsViewModel(new NavigationService());
 
             BindingContext = _viewModel;
         }
@@ -31,15 +32,9 @@ namespace CoffeeShop
             _viewModel.OnAppearingCommand.Execute(null);
         }
 
-        private void OnCoffeeSelected(object sender, EventArgs e)
+        private void OnProductTapped(object sender, EventArgs e)
         {
-            var image = (Image)sender;
-
-            var product = (Product) ((TapGestureRecognizer)image.GestureRecognizers[0]).CommandParameter;
-            
-            var detailView = new ProductDetailView(product);
-
-            Navigation.PushAsync(detailView);
+            _viewModel.ProductSelectedCommand.Execute(null);
         }
     }
 }

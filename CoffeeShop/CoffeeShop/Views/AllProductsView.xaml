@@ -56,6 +56,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Margin="-90,0,0,0"
+            CurrentItem="{Binding CurrentProduct}"
             ItemsSource="{Binding Products}"
             PeekAreaInsets="110">
 
@@ -94,10 +95,7 @@
                                 Source="{Binding Image}">
 
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        NumberOfTapsRequired="1"
-                                        Tapped="OnCoffeeSelected" />
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnProductTapped" />
                                 </Image.GestureRecognizers>
                             </Image>
 

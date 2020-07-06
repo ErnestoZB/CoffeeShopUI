@@ -17,7 +17,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -204,10 +204,17 @@
             </Label.FormattedText>
         </Label>
 
+        <Image
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Aspect="Fill"
+            Source="all_products_footer.png" />
+
         <Button
             Grid.Row="3"
             Grid.Column="0"
-            Margin="0,0,0,24"
+            Margin="0"
             Padding="0"
             BackgroundColor="White"
             CornerRadius="16"
@@ -222,8 +229,10 @@
         <Button
             Grid.Row="3"
             Grid.Column="1"
-            Margin="0,0,0,16"
+            Margin="0"
             BackgroundColor="White"
+            BorderColor="{StaticResource Green}"
+            BorderWidth="2"
             CornerRadius="26"
             FontFamily="Icons"
             FontSize="20"
@@ -234,10 +243,11 @@
             VerticalOptions="Center"
             WidthRequest="52" />
 
+
         <Button
             Grid.Row="3"
             Grid.Column="2"
-            Margin="0,0,0,24"
+            Margin="0"
             Padding="0"
             BackgroundColor="White"
             CornerRadius="16"

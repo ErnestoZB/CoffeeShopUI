@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:icons="clr-namespace:CoffeeShop.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="White"
     NavigationPage.HasNavigationBar="false"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -17,7 +18,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -140,10 +141,17 @@
                 Text="{Binding Product.Description}"
                 TextColor="Black" />
 
+            <Image
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Aspect="Fill"
+                Source="details_footer.png" />
+
             <Button
                 Grid.Row="5"
                 Grid.Column="0"
-                Margin="0,0,0,24"
+                Margin="0"
                 Padding="0"
                 BackgroundColor="{StaticResource Green}"
                 CornerRadius="16"
@@ -158,7 +166,7 @@
             <Button
                 Grid.Row="5"
                 Grid.Column="1"
-                Margin="0,0,0,16"
+                Margin="0"
                 BackgroundColor="White"
                 CornerRadius="26"
                 FontFamily="Icons"
@@ -173,7 +181,7 @@
             <Button
                 Grid.Row="5"
                 Grid.Column="2"
-                Margin="0,0,0,24"
+                Margin="0"
                 Padding="0"
                 BackgroundColor="{StaticResource Green}"
                 CornerRadius="16"
